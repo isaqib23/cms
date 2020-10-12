@@ -21,20 +21,18 @@ class ArticleController extends Controller
     }
 
     /**
-     * @param Request $request
      * @return mixed
      */
-    public function index(Request $request) {
+    public function index() {
         $articles = Article::paginate(5);
 
         return view('articles')->withArticles($articles);
     }
 
     /**
-     * @param Request $request
      * @return Factory|View
      */
-    public function create(Request $request){
+    public function create(){
         return view('create-article');
     }
 
