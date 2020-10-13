@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Article::class, function (Faker $faker) {
     return [
-        'title' => substr($faker->sentence(2), 0, -1),
+        'title' => $faker->text(25),
     ];
 });

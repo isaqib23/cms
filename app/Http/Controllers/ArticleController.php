@@ -46,7 +46,7 @@ class ArticleController extends Controller
 
         tap(new Article($data))->save();
 
-        return redirect('/home');
+        return redirect('/home')->with('success', 'Article created!');;
     }
 
     /**
@@ -56,7 +56,7 @@ class ArticleController extends Controller
     public function edit($id){
         $article = Article::find($id);
 
-        return view('update-article', compact('article'));
+        return view('create-article', compact('article'));
     }
 
     /**
